@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Online Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Event<span>Hub</span></div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Online Event Management System</h1>
+            <p>
+                Discover, manage and register for exciting events
+                easily from one platform.
+            </p>
+            <a href="#events" class="btn">Explore Events</a>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <h2>Upcoming Events</h2>
+        <p class="section-text">Find an event that interests you</p>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events..."
+                onkeyup="searchEvents()"
+            >
+        </div>
+
+        <div class="event-container" id="eventContainer">
+
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="event-image tech">
+                    <span>TECH</span>
+                </div>
+
+                <div class="event-content">
+                    <h3>Web Technology Workshop</h3>
+                    <p>Learn modern web development technologies.</p>
+
+                    <p><strong>Date:</strong> 15 September 2026</p>
+                    <p><strong>Location:</strong> Chennai</p>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('Web Technology Workshop')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+                <div class="event-image seminar">
+                    <span>SEMINAR</span>
+                </div>
+
+                <div class="event-content">
+                    <h3>AI & Machine Learning Seminar</h3>
+                    <p>Explore the latest developments in artificial intelligence.</p>
+
+                    <p><strong>Date:</strong> 20 September 2026</p>
+                    <p><strong>Location:</strong> Coimbatore</p>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('AI & Machine Learning Seminar')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+                <div class="event-image cultural">
+                    <span>CULTURAL</span>
+                </div>
+
+                <div class="event-content">
+                    <h3>College Cultural Fest</h3>
+                    <p>A fun-filled event with music, dance and competitions.</p>
+
+                    <p><strong>Date:</strong> 25 September 2026</p>
+                    <p><strong>Location:</strong> Madurai</p>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('College Cultural Fest')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="event-card">
+                <div class="event-image business">
+                    <span>BUSINESS</span>
+                </div>
+
+                <div class="event-content">
+                    <h3>Startup & Business Summit</h3>
+                    <p>Connect with entrepreneurs and business professionals.</p>
+
+                    <p><strong>Date:</strong> 5 October 2026</p>
+                    <p><strong>Location:</strong> Bengaluru</p>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('Startup & Business Summit')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About EventHub</h2>
+
+            <p>
+                EventHub is a web-based Online Event Management System
+                designed to make event discovery and registration simple.
+                Users can view upcoming events and register online.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>📅 Easy Management</h3>
+                    <p>Manage events and schedules easily.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>🎟️ Online Registration</h3>
+                    <p>Register for events through the website.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>🔍 Event Search</h3>
+                    <p>Quickly find events using the search option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="register-section">
+        <h2>Event Registration</h2>
+        <p class="section-text">Fill in your details to register</p>
+
+        <form id="registrationForm" class="registration-form">
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="phone">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+            <label for="event">Select Event</label>
+            <select id="event" required>
+                <option value="">-- Select an Event --</option>
+                <option value="Web Technology Workshop">
+                    Web Technology Workshop
+                </option>
+                <option value="AI & Machine Learning Seminar">
+                    AI & Machine Learning Seminar
+                </option>
+                <option value="College Cultural Fest">
+                    College Cultural Fest
+                </option>
+                <option value="Startup & Business Summit">
+                    Startup & Business Summit
+                </option>
+            </select>
+
+            <button type="submit" class="submit-btn">
+                Submit Registration
+            </button>
+
+        </form>
+
+        <div id="successMessage" class="success-message"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 EventHub | Online Event Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
